@@ -3,7 +3,11 @@ Given a collection of intervals, merge all overlapping intervals.
 For example,
 Given [1,3],[2,6],[8,10],[15,18],
 return [1,6],[8,10],[15,18].
-
+///////////////////////////////////////////
+//要点主要3点：
+1、要用arraylist表示动态空间
+2、向res中添加interval时候要记得new，因为interval不是基本数据类型，而是一个对象
+3、思路：将intervals的start和end分别进行排序
 /**
  * Definition for an interval.
  * public class Interval {
