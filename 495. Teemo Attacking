@@ -1,0 +1,22 @@
+Description：
+Input: [1,2], 2
+Output: 3
+Explanation: At time point 1, Teemo starts attacking Ashe and makes Ashe be poisoned. 
+This poisoned status will last 2 seconds until the end of time point 2. 
+However, at the beginning of time point 2, Teemo attacks Ashe again who is already in poisoned status. 
+Since the poisoned status won't add up together, though the second poisoning attack will still work at time point 2, it will stop at the end of time point 3. 
+So you finally need to output 3.
+
+//就只要判断一下前一项+duration之后是否超过下一项即可，easy.
+public class Solution {
+    public int findPoisonedDuration(int[] time, int duration) {
+        if (time.length == 0 || time == null) return 0;
+        int res = 0;
+        for (int i = 0; i < time.length-1; i++){
+            if (time[i] + duration <= time[i+1]){
+                res += duration;
+            }else res += time[i+1] - time[i];
+        }
+        return res+duration;
+    }
+}
