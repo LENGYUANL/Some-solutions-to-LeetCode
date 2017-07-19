@@ -8,6 +8,7 @@ Since the poisoned status won't add up together, though the second poisoning att
 So you finally need to output 3.
 
 //就只要判断一下前一项+duration之后是否超过下一项即可，easy.
+```Java
 public class Solution {
     public int findPoisonedDuration(int[] time, int duration) {
         if (time.length == 0 || time == null) return 0;
@@ -20,4 +21,5 @@ public class Solution {
         return res+duration;
     }
 }
+```
 
