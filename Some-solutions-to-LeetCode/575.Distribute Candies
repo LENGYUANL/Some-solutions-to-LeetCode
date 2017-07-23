@@ -1,0 +1,12 @@
+public class Solution {
+    public int distributeCandies(int[] candies) {
+        int res = 0;
+        Set<Integer> set = new HashSet<>();
+        for (int num: candies){
+            set.add(num);
+        }
+        return candies.length/2 > set.size() ? set.size():candies.length/2;
+        
+    }
+}
+//要使得种类尽可能多就让sister把所有种类都至少拿一个（若这个值比一半糖果的数量多，就return糖果数量的一半）
