@@ -1,0 +1,15 @@
+public class Solution {
+    public char findTheDifference(String s, String t) {
+        //bit manipulation
+        char res = 0;
+        for (char x: s.toCharArray()) res ^= x;
+        for (char y: t.toCharArray()) res ^= y;
+        return res;
+        // char res = t.charAt(t.length()-1);
+        // for (int i = 0; i < s.length(); i++){
+        //     res += s.charAt(i);
+        //     res -= t.charAt(i);
+        // }
+        // return res;//SUM meethod
+    }
+}
